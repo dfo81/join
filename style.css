@@ -1,0 +1,23 @@
+:root {
+    background:  #F6F7F8;
+    --main-color: #2b3545;
+    --highlight-color: #4fa9dd;
+}
+
+* {
+    outline: 1px solid red;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    max-width: 1440px;
+    align-items: center;
+    height: 100vh;
+}
