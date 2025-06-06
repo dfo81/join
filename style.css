@@ -10,14 +10,36 @@
 
 body {
     display: flex;
-    margin: 0;
     justify-content: center;
-    align-items: center;
+    margin: 0;
 }
 
 main {
     display: flex;
-    max-width: 1440px;
+    justify-content: center;
     align-items: center;
+    width: 1920px;
     height: 100vh;
+}
+
+.logo-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveLogo 1.5s ease-in-out forwards;
+  z-index: 1000;
+}
+
+@keyframes moveLogo {
+  0% {
+    top: 50%;
+    left: 50%;    
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    top: 0px;
+    left: 20px;
+    transform: translate(0, 0) scale(0.5);
+  }
 }
