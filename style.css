@@ -27,6 +27,7 @@ main {
   transform: translate(-50%, -50%) scale(1);
   animation: moveLogo .5s ease-in-out forwards;
   z-index: 1000;
+  margin: 24px;
 }
 
 .logo-wrapper img {
@@ -43,6 +44,6 @@ main {
   100% {
     top: -24px;
     left: 50%;
-    transform: translateX(calc(-50% - min(600px, 50vw) + 12px)) scale(0.4);
+    transform: translateX(calc(-50% - min(680px, 50vw) + 48px)) scale(0.4);
   }
 }
