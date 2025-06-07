@@ -1,29 +1,19 @@
 * {
-  outline: px solid red;
+    outline: 1px solid red;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   background-color: #4589ff;
-  animation: bgFade 0.5s ease-in-out forwards;
-  animation-delay: .5s;
-  margin: 0 auto;
+  animation: bgFade .5s ease-in-out forwards;
+  margin: 0;
   overflow-x: hidden;
-  height: 100vh;
-  max-width: 1440px;
-}
-
-header {
-  display: flex;
-  justify-content: end;
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
 }
 
 .logo-wrapper {
@@ -31,14 +21,12 @@ main {
   background-image: url(./assets/joinLogoBigWhite.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 323.1px;
-  width: 265px;
+  height: 335px;
+  width: 274px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  animation: moveLogo 0.5s ease-in-out forwards,
-    logoColor 0.5s ease-in-out forwards;
-    animation-delay: 0.5s, 0.5s;
+  animation: moveLogo .5s ease-in-out forwards, logoColor .5s ease-in-out forwards;
   z-index: 1000;
   margin: 24px;
 }
@@ -52,7 +40,7 @@ main {
   100% {
     top: -64px;
     left: 50%;
-    transform: translateX(calc(-50% - min(720px, 50vw) + 96px)) scale(0.38);
+    transform: translateX(calc(-50% - min(720px, 50vw) + 96px)) scale(0.4);
   }
 }
 
@@ -72,11 +60,4 @@ main {
   100% {
     background-image: url(./assets/joinLogoBlue.svg);
   }
-}
-
-.login {
-  width: 652px;
-  height: 448px;
-  border-radius: 30px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
