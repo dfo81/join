@@ -6,25 +6,25 @@
     <title>Join</title>
     <link rel="shortcut icon" href="./assets/icons/joinLogoBlue.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
   </head>
   <body>
     <div class="logo-wrapper" alt="join-logo"></div>
     <header>
       <div class="sign-up">
-        <h3>Not a Join user?</h3><a href="">Sign up</a>
+        <b>Not a Join user?</b><button>Sign up</button>
       </div>
     </header>
     <main>
       <div class="login">
         <h1>Log in</h1>
-        <form action="">
-          <input type="email" alt="email">
+          <input type="email" alt="email"><img src="./assets/icons/mail.svg" alt="">
           <input type="password" alt="password">
-          <div>
-            <button type="submit" alt="Log in">Log in</button>
-            <button type="submit" alt="guest log in">Guest log in</button>
-          </div>
-        </form>
+        <div>
+          <button type="submit" alt="Log in">Log in</button>
+          <button type="submit" alt="guest log in">Guest log in</button>
+        </div>
       </div>
     </main>
     <footer>
@@ -33,3 +33,14 @@
     </footer>
   </body>
 </html>
+
+
+<!--
+
+<input id="email" placeholder="E-Mail">
+<input id="password" type="password" placeholder="Passwort">
+<button onclick="register(email.value, password.value)">Registrieren</button>
+<button onclick="login(email.value, password.value)">Login</button>
+<button onclick="logout()">Logout</button>
+
+-->
