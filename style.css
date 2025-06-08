@@ -1,5 +1,10 @@
 * {
-  outline: px solid red;
+  outline: 0px solid red;
+}
+
+@font-face {
+  font-family: open-sans;
+  src: url(/assets/fonts/Open_Sans/static/OpenSans-Light.ttf);
 }
 
 body {
@@ -12,11 +17,28 @@ body {
   overflow-x: hidden;
   height: 100vh;
   max-width: 1440px;
+  font-family: open-sans;
 }
 
 header {
   display: flex;
   justify-content: end;
+}
+
+.sign-up {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  margin: 48px;
+  gap: 48px;
+}
+
+.sign-up a {
+  background-color: #4589ff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
 }
 
 main {
@@ -28,7 +50,7 @@ main {
 
 .logo-wrapper {
   position: fixed;
-  background-image: url(./assets/joinLogoBigWhite.svg);
+  background-image: url(./assets/icons/joinLogoBigWhite.svg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 323.1px;
@@ -67,14 +89,18 @@ main {
 
 @keyframes logoColor {
   0% {
-    background-image: url(./assets/joinLogoBigWhite.svg);
+    background-image: url(./assets/icons/joinLogoBigWhite.svg);
   }
   100% {
-    background-image: url(./assets/joinLogoBlue.svg);
+    background-image: url(./assets/icons/joinLogoBlue.svg);
   }
 }
 
 .login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 652px;
   height: 448px;
   border-radius: 30px;
