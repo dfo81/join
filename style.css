@@ -1,5 +1,5 @@
 * {
-  outline: 0px solid red;
+  outline: 1px solid red;
 }
 
 @font-face {
@@ -16,10 +16,24 @@ body {
   margin: 0 auto;
   overflow-x: hidden;
   height: 100vh;
-  max-width: 1550px;
+  max-width: 1440px;
   font-family: open-sans;
   font-size: 24px;
   font-weight: 200;
+}
+
+.content {
+  opacity: 0;
+  pointer-events: none; 
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 0.5s; 
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 header {
@@ -38,7 +52,7 @@ header {
 
 .sign-up button {
   background-color: #4589ff;
-  padding: 10px 16px;
+  padding: 8px 16px;
   border: 0;
   border-radius: 8px;
   color: white;
@@ -53,7 +67,7 @@ header {
   background-color: #005eff;
   box-shadow: 0px 4px 8px rgba(83, 83, 83, 0.44);
   cursor: pointer;
-  transform: translate(1px, -1px);
+  transform: translate(-1px, 1px);
 }
 
 main {
@@ -73,8 +87,8 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  animation: moveLogo .1s ease-in-out forwards,
-    logoColor .1s ease-in-out forwards;
+  animation: moveLogo .5s ease-in-out forwards,
+    logoColor .5s ease-in-out forwards;
     animation-delay: .5s, .5s;
   z-index: 1000;
   margin: 24px;
@@ -89,7 +103,7 @@ main {
   100% {
     top: -40px;
     left: 50%;
-    transform: translateX(calc(-50% - min(calc(1550px / 2), 50vw) + 77px * 1.5)) scale(0.4);
+    transform: translateX(calc(-50% - min(calc(1440px / 2), 50vw) + 103px)) scale(0.4);
   }
 }
 
@@ -130,9 +144,12 @@ main {
   text-underline-offset: 24px;
 }
 
-.form {
+.input {
   display: flex;
-  flex-direction: column;
+  border: none;
+  border-bottom: 1px solid #dedede;
+  align-items: center;
+  width: 422px;
 }
 
 footer {
@@ -151,3 +168,4 @@ footer a {
 footer a:hover {
   color: #005eff;
 }
+
