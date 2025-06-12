@@ -10,6 +10,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="./script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
   </head>
@@ -24,15 +25,15 @@
       <main>
         <div class="login">
           <h1>Log in</h1>
-          <div class="input">
-            <input type="email" alt="email" /><img src="./assets/icons/mail.svg" alt=""/>
+          <div class="input-wrapper">
+            <input type="email" alt="email" placeholder="Email"/><img src="./assets/icons/mail.svg" alt=""/>
           </div>
-          <div class="input">
-            <input type="password" alt="password" /><img src="./assets/icons/lock.svg" alt="">
+          <div class="input-wrapper">
+            <input type="password" alt="password" placeholder="password"/><img src="./assets/icons/lock.svg" alt="">
           </div>
-          <div>
-            <button type="submit" alt="Log in">Log in</button>
-            <button type="submit" alt="guest log in">Guest log in</button>
+          <div class="button-wrapper">
+            <button id="login-button" type="submit" alt="Log in">Log in</button>
+            <button id="guest-login" type="submit" alt="guest log in">Guest log in</button>
           </div>
         </div>
       </main>

@@ -1,5 +1,5 @@
 * {
-  outline: 1px solid red;
+  outline: 0px solid red;
 }
 
 @font-face {
@@ -12,21 +12,23 @@ body {
   flex-direction: column;
   background-color: #4589ff;
   animation: bgFade 0.5s ease-in-out forwards;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
   margin: 0 auto;
   overflow-x: hidden;
-  height: 100vh;
   max-width: 1440px;
   font-family: open-sans;
-  font-size: 24px;
-  font-weight: 200;
+  font-size: 23px;
+  font-weight: 300;
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
   opacity: 0;
   pointer-events: none; 
   animation: fadeIn 0.5s ease-in-out forwards;
   animation-delay: 0.5s; 
+  height: 100vh;
 }
 
 @keyframes fadeIn {
@@ -45,20 +47,21 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 315px;
+  gap: 35px;
   height: 48px;
   margin: 67px 90px;
+  font: 400;
 }
 
 .sign-up button {
   background-color: #4589ff;
-  padding: 8px 16px;
+  padding: 10px 16px;
   border: 0;
   border-radius: 8px;
   color: white;
   font-family: open-sans;
-  font-size: 24px;
-  font-weight: 200;
+  font-size: 23px;
+  font: 400;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
@@ -87,9 +90,9 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  animation: moveLogo .5s ease-in-out forwards,
-    logoColor .5s ease-in-out forwards;
-    animation-delay: .5s, .5s;
+  animation: moveLogo 0.5s ease-in-out forwards,
+    logoColor 0.5s ease-in-out forwards;
+    animation-delay: 0.5s, 0.5s;
   z-index: 1000;
   margin: 24px;
 }
@@ -139,16 +142,77 @@ main {
 
 .login h1 {
   font-size: 48px;
+  font: 700;
   text-decoration: underline;
   text-decoration-color:#4589ff;
   text-underline-offset: 24px;
 }
 
-.input {
+.input-wrapper {
   display: flex;
   border: none;
-  border-bottom: 1px solid #dedede;
+  padding: 12px 21px;
   align-items: center;
+  width: 422px;
+  border-bottom: 1px solid #dedede;
+  transition: border-color 0.3s;
+}
+
+input {
+  width: 422px;
+  border: none;
+  font-size: 23px;
+}
+
+.input-wrapper:focus-within {
+  border-bottom: 1px solid #005eff;
+}
+
+
+#login-button {
+  background-color: #4589ff;
+  padding: 10px 32px;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  font-family: open-sans;
+  font-size: 23px;
+  font: 400;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#guest-login {
+  background-color: white;
+  padding: 10px 35px;
+  border: 1px solid #647188;
+  border-radius: 8px;
+  color: #647188;
+  font-family: open-sans;
+  font-size: 23px;
+  font: 400;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#login-button:hover {
+  background-color: #005eff;
+  box-shadow: 0px 4px 8px rgba(83, 83, 83, 0.44);
+  cursor: pointer;
+  transform: translate(1px, -1px);
+}
+
+#guest-login:hover {
+  box-shadow: 0px 4px 8px rgba(83, 83, 83, 0.44);
+  cursor: pointer;
+  border: 1px solid #005eff;
+  color: #005eff;
+  transform: translate(1px, -1px);
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-around;
   width: 422px;
 }
 
