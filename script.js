@@ -1,4 +1,57 @@
- // Deine Firebase-Konfiguration (aus der Projektkonsole kopieren)
+ const passwordInput = document.getElementById("password");
+  const toggleIcon = document.getElementById("togglePassword");
+
+  let isVisible = false;
+
+  function updateIcon() {
+    const value = passwordInput.value;
+    if (!value) {
+      toggleIcon.src = "./assets/icons/lock.svg"; // Zustand 1: leer
+      toggleIcon.classList.remove("cursor-pointer");
+    } else if (isVisible) {
+      toggleIcon.src = "./assets/icons/visibility.svg"; // Zustand 3: sichtbar
+      toggleIcon.classList.add("cursor-pointer");
+    } else {
+      toggleIcon.src = "./assets/icons/visibilityOff.svg"; // Zustand 2: verborgen
+      toggleIcon.classList.add("cursor-pointer");
+    }
+  }
+
+  // Bei Klick auf das Icon Passwort anzeigen/verstecken
+  toggleIcon.addEventListener("click", function () {
+    if (!passwordInput.value) return; // nichts tun wenn leer
+    isVisible = !isVisible;
+    passwordInput.type = isVisible ? "text" : "password";
+    updateIcon();
+  })
+
+  // Bei Eingabe ins Feld Icons aktualisieren
+  passwordInput.addEventListener("input", function () {
+    // Falls man löscht, immer auf verborgen zurücksetzen
+    if (!passwordInput.value) {
+      isVisible = false;
+      passwordInput.type = "password";
+    }
+    updateIcon();
+  })
+
+  // Initialer Zustand
+  updateIcon()
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+// Deine Firebase-Konfiguration (aus der Projektkonsole kopieren)
 const firebaseConfig = {
   apiKey: "DEINE_API_KEY",
   authDomain: "dein-projekt.firebaseapp.com",
@@ -48,3 +101,4 @@ function logout() {
     console.log("Erfolgreich ausgeloggt");
   });
 }
+*/

@@ -18,7 +18,7 @@ body {
   max-width: 1440px;
   font-family: open-sans;
   font-size: 23px;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .content {
@@ -50,7 +50,7 @@ header {
   gap: 35px;
   height: 48px;
   margin: 67px 90px;
-  font: 400;
+  font-weight: 200;
 }
 
 .sign-up button {
@@ -137,7 +137,7 @@ main {
   height: 448px;
   border-radius: 30px;
   padding-bottom: 24px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 12px 0px;
+  box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 12px 0px;
 }
 
 .login h1 {
@@ -161,7 +161,11 @@ main {
 input {
   width: 422px;
   border: none;
-  font-size: 23px;
+  font-size: 19px;
+}
+
+input::placeholder {
+  color: #D1D1D1;
 }
 
 .input-wrapper:focus-within {
@@ -171,7 +175,7 @@ input {
 
 #login-button {
   background-color: #4589ff;
-  padding: 10px 32px;
+  padding: 8px 35px;
   border: 0;
   border-radius: 8px;
   color: white;
@@ -184,13 +188,13 @@ input {
 
 #guest-login {
   background-color: white;
-  padding: 10px 35px;
+  padding: 8px 35px;
   border: 1px solid #647188;
   border-radius: 8px;
   color: #647188;
   font-family: open-sans;
   font-size: 23px;
-  font: 400;
+  font: 200;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
@@ -226,10 +230,13 @@ footer {
 footer a {
   color: #42526e;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 footer a:hover {
   color: #005eff;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}

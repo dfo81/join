@@ -10,7 +10,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="./script.js"></script>
+    
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
   </head>
@@ -29,7 +29,7 @@
             <input type="email" alt="email" placeholder="Email"/><img src="./assets/icons/mail.svg" alt=""/>
           </div>
           <div class="input-wrapper">
-            <input type="password" alt="password" placeholder="password"/><img src="./assets/icons/lock.svg" alt="">
+            <input type="password" id="password" alt="password" placeholder="Password"/><img id="togglePassword" src="./assets/icons/lock.svg" alt="">
           </div>
           <div class="button-wrapper">
             <button id="login-button" type="submit" alt="Log in">Log in</button>
@@ -42,6 +42,7 @@
         <a href="#">Legal Notice</a>
       </footer>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
 
