@@ -1,10 +1,15 @@
-* {
-  outline: 0px solid red;
+@font-face {
+    font-family: OpenSans;
+    src: url(./assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
 }
 
 @font-face {
-  font-family: open-sans;
-  src: url(/assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+    font-family: inter;
+    src: url(./assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+* {
+    outline: 0px solid red;
 }
 
 body {
@@ -16,9 +21,9 @@ body {
   margin: 0 auto;
   overflow-x: hidden;
   max-width: 1440px;
-  font-family: open-sans;
+  font-family: OpenSans;
   font-size: 23px;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .content {
@@ -40,44 +45,39 @@ body {
 
 header {
   display: flex;
+  height: 150px;
   justify-content: end;
+  margin-right: 85px;
+  align-items: end;
 }
 
-.sign-up {
+.sign-up-box {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 35px;
-  height: 48px;
-  margin: 67px 90px;
-  font-weight: 200;
+  align-items: center;
 }
 
-.sign-up button {
+.sign-up-box button {
   background-color: #4589ff;
   padding: 10px 16px;
   border: 0;
   border-radius: 8px;
-  color: white;
-  font-family: open-sans;
+  color: #ffffff;
   font-size: 23px;
-  font: 400;
+  font-family: OpenSans;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.sign-up button:hover {
+.sign-up-box button:hover {
   background-color: #005eff;
   box-shadow: 0px 4px 8px rgba(83, 83, 83, 0.44);
   cursor: pointer;
-  transform: translate(-1px, 1px);
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+.sign-up-box button:active {
+  color: #4589FF;
+  background-color: #FFFFFF;
 }
 
 .logo-wrapper {
@@ -106,7 +106,7 @@ main {
   100% {
     top: -40px;
     left: 50%;
-    transform: translateX(calc(-50% - min(calc(1440px / 2), 50vw) + 103px)) scale(0.4);
+    transform: translateX(calc(-50% - min(calc(1440px / 2), 50vw) + 105px)) scale(0.4);
   }
 }
 
@@ -128,103 +128,158 @@ main {
   }
 }
 
-.login {
+main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  height: 100vh;
   align-items: center;
-  width: 652px;
-  height: 448px;
-  border-radius: 30px;
-  padding-bottom: 24px;
-  box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 12px 0px;
+  justify-content: center;
 }
 
-.login h1 {
-  font-size: 48px;
-  font: 700;
-  text-decoration: underline;
-  text-decoration-color:#4589ff;
-  text-underline-offset: 24px;
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 39px;
+    width: 652px;
+    height: 448px;
+    border-radius: 30px;
+    box-shadow: rgb(0,0,0,0.08) 0px 0px 10px 3px;
+}
+
+.login-title-box {
+    width: 422px;
+    height: 74px;
+    justify-items: center;
+}
+
+.login-title {
+    text-align: center;
+    width: 315px;
+    height: 58px;
+    font-size: 48px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.login-title-box:after {
+    content: "";
+    display: block;
+    background: #4589FF;
+    width: 150px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.input-wrapper-box {
+    width: 422px;
+    height: 152px;
 }
 
 .input-wrapper {
-  display: flex;
-  border: none;
-  padding: 12px 21px;
-  align-items: center;
-  width: 422px;
-  border-bottom: 1px solid #dedede;
-  transition: border-color 0.3s;
-}
-
-input {
-  width: 422px;
-  border: none;
-  font-size: 19px;
-}
-
-input::placeholder {
-  color: #D1D1D1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 48px;
+    padding: 0px 21px;
+    border-bottom: 1px solid #D1D1D1;
+    transition: border-color 0.3s;
 }
 
 .input-wrapper:focus-within {
-  border-bottom: 1px solid #005eff;
+    border-color: #4589FF;
 }
 
+.input-wrapper input {
+    border: none;
+    width: 100%;
+    font-size: 19px;
+}
+
+.input-wrapper input:focus {
+    border: none;
+    outline: none;
+    width: 90%;
+}
+
+.input-wrapper input::placeholder {
+    color: #D1D1D1;
+}
+
+.input-wrapper img {
+    height: 24px;
+    width: 24px;
+}
+
+.login-button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 422px;
+    height: 48px;
+    gap: 35px;
+}
+
+.login-button-wrapper button {
+    border: none;
+    font-size: 23px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 10px 35px;
+}
 
 #login-button {
-  background-color: #4589ff;
-  padding: 8px 35px;
-  border: 0;
-  border-radius: 8px;
-  color: white;
-  font-family: open-sans;
-  font-size: 23px;
-  font: 400;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-#guest-login {
-  background-color: white;
-  padding: 8px 35px;
-  border: 1px solid #647188;
-  border-radius: 8px;
-  color: #647188;
-  font-family: open-sans;
-  font-size: 23px;
-  font: 200;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    background-color: #4589FF;
+    color: #FFFFFF;
 }
 
 #login-button:hover {
+  cursor: pointer;
   background-color: #005eff;
   box-shadow: 0px 4px 8px rgba(83, 83, 83, 0.44);
-  cursor: pointer;
-  transform: translate(1px, -1px);
 }
 
-#guest-login:hover {
+#login-button:active {
+  background-color: #FFFFFF;
+  color:#4589FF ;
+}
+
+#guest-button {
+  background-color: #FFFFFF;
+  border: 1px solid #647188;
+  color: #647188;
+}
+
+#guest-button:hover {
+  cursor: pointer;
+  border-color: #4589FF;
+  color: #4589FF;
   box-shadow: 0px 4px 8px rgba(83, 83, 83, 0.44);
-  cursor: pointer;
-  border: 1px solid #005eff;
-  color: #005eff;
-  transform: translate(1px, -1px);
 }
 
-.button-wrapper {
-  display: flex;
-  justify-content: space-around;
-  width: 422px;
+#guest-button:active {
+  color: #005eff;
+  border-color: #005eff;
+}
+
+.spacebox {
+  height: 32px;
+}
+
+#errorMessage {
+    color: #FF8190;
+    font-family: inter;
+    font-size: 13px;
+    font-weight: 300;
+    height: 24px;
+    padding-top: 8px;
 }
 
 footer {
   display: flex;
+  height: 150px;
+  align-items: center;
   justify-content: center;
-  gap: 36px;
-  margin: 48px;
+  gap: 35px;
 }
 
 footer a {
@@ -240,3 +295,4 @@ footer a:hover {
 .cursor-pointer {
   cursor: pointer;
 }
+

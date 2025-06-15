@@ -1,53 +1,56 @@
- const passwordInput = document.getElementById("password");
-  const toggleIcon = document.getElementById("togglePassword");
+const passwordInput = document.getElementById('password');
+const toggleIcon = document.getElementById('togglePassword');
+const emailImput = document.getElementById('email');
+const error = document.getElementById('errorMessage');
 
-  let isVisible = false;
+let isVisible = false;
 
-  function updateIcon() {
-    const value = passwordInput.value;
-    if (!value) {
-      toggleIcon.src = "./assets/icons/lock.svg"; // Zustand 1: leer
-      toggleIcon.classList.remove("cursor-pointer");
-    } else if (isVisible) {
-      toggleIcon.src = "./assets/icons/visibility.svg"; // Zustand 3: sichtbar
-      toggleIcon.classList.add("cursor-pointer");
-    } else {
-      toggleIcon.src = "./assets/icons/visibilityOff.svg"; // Zustand 2: verborgen
-      toggleIcon.classList.add("cursor-pointer");
-    }
+function updateIcon() {
+  const value = passwordInput.value;
+  if (!value) {
+    toggleIcon.src = "./assets/icons/lock.svg";
+    toggleIcon.classList.remove('cursor-pointer');
+  } else if (isVisible) {
+    toggleIcon.src = "./assets/icons/visibility.svg";
+    toggleIcon.classList.add('cursor-pointer');
+  } else {
+    toggleIcon.src = "./assets/icons/visibilityOff.svg";
+    toggleIcon.classList.add('cursor-pointer');
   }
+}
 
-  // Bei Klick auf das Icon Passwort anzeigen/verstecken
-  toggleIcon.addEventListener("click", function () {
-    if (!passwordInput.value) return; // nichts tun wenn leer
-    isVisible = !isVisible;
-    passwordInput.type = isVisible ? "text" : "password";
-    updateIcon();
-  })
+// onclick eye will show / hide password
+toggleIcon.addEventListener("click", function () {
+  if (!passwordInput.value) return;
+  isVisible = !isVisible;
+  passwordInput.type = isVisible ? "text" : "password";
+  updateIcon();
+});
 
-  // Bei Eingabe ins Feld Icons aktualisieren
-  passwordInput.addEventListener("input", function () {
-    // Falls man löscht, immer auf verborgen zurücksetzen
-    if (!passwordInput.value) {
-      isVisible = false;
-      passwordInput.type = "password";
-    }
-    updateIcon();
-  })
+// change icon on input
+passwordInput.addEventListener("input", function () {
+  error.innerHTML = "";
+  if (!passwordInput.value) {
+    isVisible = false;
+    passwordInput.type = "password";
+    error.innerHTML = "";
+  }
+  updateIcon();
+});
 
-  // Initialer Zustand
-  updateIcon()
+// clear error by change on input
+emailImput.addEventListener("input", function () {
+  error.innerHTML = "";
+});
 
-
-
-
-
-
-
-
-
-
-
+// log in 
+function logIn() {
+  if (!emailImput.value || !passwordInput.value)
+  error.innerHTML = "Check your email and password. Please try again.";
+  else {
+    //todo check login
+  }
+}
 
 
 /*

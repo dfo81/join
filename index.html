@@ -10,7 +10,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="style.css" />
-    
+
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
   </head>
@@ -18,22 +18,36 @@
     <div class="logo-wrapper" alt="join-logo"></div>
     <div class="content">
       <header>
-        <div class="sign-up">
+        <div class="sign-up-box">
           <b>Not a Join user?</b><button>Sign up</button>
         </div>
       </header>
       <main>
-        <div class="login">
-          <h1>Log in</h1>
-          <div class="input-wrapper">
-            <input type="email" alt="email" placeholder="Email"/><img src="./assets/icons/mail.svg" alt=""/>
+        <div class="login-box">
+          <div class="login-title-box">
+            <div class="login-title">Log in</div>
           </div>
-          <div class="input-wrapper">
-            <input type="password" id="password" alt="password" placeholder="Password"/><img id="togglePassword" src="./assets/icons/lock.svg" alt="">
+          <div class="input-wrapper-box">
+            <div>
+              <div class="input-wrapper">
+                <input itemid="email" type="email" placeholder="Email" id="email" />
+                <img src="./assets/icons/mail.svg" alt="" />
+              </div>
+              <div class="spacebox"></div>
+            </div>
+            <div>
+              <div class="input-wrapper">
+                <input id="password" type="password" placeholder="Password" />
+                <img id="togglePassword" src="./assets/icons/lock.svg" alt="password" />
+              </div>
+              <div id="errorMessage">
+                
+              </div>
+            </div>
           </div>
-          <div class="button-wrapper">
-            <button id="login-button" type="submit" alt="Log in">Log in</button>
-            <button id="guest-login" type="submit" alt="guest log in">Guest log in</button>
+          <div class="login-button-wrapper">
+            <button onclick="logIn()" id="login-button">Log in</button>
+            <button id="guest-button">Guest log in</button>
           </div>
         </div>
       </main>
