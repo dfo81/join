@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/joinLogoBlue.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+  </head>
+  <body>
+    <div class="logo-wrapper" alt="join-logo"></div>
+    <div class="content">
+      <header>
+        <div class="sign-up-box">
+          <b>Not a Join user?</b><button>Sign up</button>
+        </div>
+      </header>
+      <main>
+        <div class="login-box">
+          <div class="login-title-box">
+            <div class="login-title">Log in</div>
+          </div>
+          <div class="input-wrapper-box">
+            <div>
+              <div class="input-wrapper">
+                <input itemid="email" type="email" placeholder="Email" id="email" />
+                <img src="./assets/icons/mail.svg" alt="" />
+              </div>
+              <div class="spacebox"></div>
+            </div>
+            <div>
+              <div class="input-wrapper">
+                <input id="password" type="password" placeholder="Password" />
+                <img id="togglePassword" src="./assets/icons/lock.svg" alt="password" />
+              </div>
+              <div id="errorMessage">
+                
+              </div>
+            </div>
+          </div>
+          <div class="login-button-wrapper">
+            <button onclick="logIn()" id="login-button">Log in</button>
+            <button id="guest-button">Guest log in</button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Legal Notice</a>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

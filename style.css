@@ -225,6 +225,7 @@ main {
     height: 48px;
     border-radius: 8px;
     padding: 10px 35px;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 #login-button {
@@ -247,6 +248,7 @@ main {
   background-color: #FFFFFF;
   border: 1px solid #647188;
   color: #647188;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 #guest-button:hover {
