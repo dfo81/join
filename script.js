@@ -1,7 +1,7 @@
-const passwordInput = document.getElementById('password');
-const toggleIcon = document.getElementById('togglePassword');
-const emailInput = document.getElementById('email');
-const error = document.getElementById('errorMessage');
+const passwordInput = document.getElementById("password");
+const toggleIcon = document.getElementById("togglePassword");
+const emailInput = document.getElementById("email");
+const error = document.getElementById("errorMessage");
 
 let isVisible = false;
 
@@ -9,13 +9,13 @@ function updateIcon() {
   const value = passwordInput.value;
   if (!value) {
     toggleIcon.src = "./assets/icons/lock.svg";
-    toggleIcon.classList.remove('cursor-pointer');
+    toggleIcon.classList.remove("cursor-pointer");
   } else if (isVisible) {
     toggleIcon.src = "./assets/icons/visibility.svg";
-    toggleIcon.classList.add('cursor-pointer');
+    toggleIcon.classList.add("cursor-pointer");
   } else {
     toggleIcon.src = "./assets/icons/visibilityOff.svg";
-    toggleIcon.classList.add('cursor-pointer');
+    toggleIcon.classList.add("cursor-pointer");
   }
 }
 
@@ -29,7 +29,6 @@ toggleIcon.addEventListener("click", function () {
 
 // change password visibility icon on input
 passwordInput.addEventListener("input", function () {
-  error.innerHTML = "";
   if (!passwordInput.value) {
     isVisible = false;
     passwordInput.type = "password";
@@ -44,48 +43,51 @@ emailInput.addEventListener("input", function () {
 });
 
 emailInput.addEventListener("focus", function () {
-  emailInput.parentElement.style.borderColor = '#4589FF';
-  passwordInput.parentElement.style.borderColor = '#D1D1D1';
+  emailInput.parentElement.style.borderColor = "#4589FF";
+  passwordInput.parentElement.style.borderColor = "#D1D1D1";
 });
 
 emailInput.addEventListener("blur", function () {
-  emailInput.parentElement.style.borderColor = '#D1D1D1'; 
+  emailInput.parentElement.style.borderColor = "#D1D1D1";
 });
 
 passwordInput.addEventListener("focus", function () {
-  passwordInput.parentElement.style.borderColor = '#4589FF';
-  emailInput.parentElement.style.borderColor = '#D1D1D1';
+  passwordInput.parentElement.style.borderColor = "#4589FF";
+  emailInput.parentElement.style.borderColor = "#D1D1D1";
 });
 
 passwordInput.addEventListener("blur", function () {
-  passwordInput.parentElement.style.borderColor = '#D1D1D1'; 
+  passwordInput.parentElement.style.borderColor = "#D1D1D1";
 });
 
-// log in 
+// log in
 function logIn() {
-  if (!emailInput.value || !passwordInput.value) {
-  error.innerHTML = "Check your email and password. Please try again.";
-  emailInput.parentElement.style.borderColor = 'red';
-  passwordInput.parentElement.style.borderColor = 'red';
-  }
-  else {
-    //todo check login
-  }
+  auth.signInWithEmailAndPassword(emailInput.value, passwordInput.value)
+    .then((userCredential) => {
+      const user = userCredential.user;
+    })
+    .catch(() => {
+      error.innerHTML = "Check your email and password. Please try again.";
+      emailInput.parentElement.style.borderColor = "red";
+      passwordInput.parentElement.style.borderColor = "red";
+    });
 }
 
-
-/*
-// Deine Firebase-Konfiguration (aus der Projektkonsole kopieren)
 const firebaseConfig = {
-  apiKey: "DEINE_API_KEY",
-  authDomain: "dein-projekt.firebaseapp.com",
-  projectId: "dein-projekt-id",
-  appId: "deine-app-id"
+  apiKey: "AIzaSyBbEjsMDR3cREofPfBfMT7jFlPZQ5sAVLI",
+  authDomain: "mytest-27fda.firebaseapp.com",
+  databaseURL:
+    "https://mytest-27fda-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "mytest-27fda",
+  storageBucket: "mytest-27fda.firebasestorage.app",
+  messagingSenderId: "862915113613",
+  appId: "1:862915113613:web:03541550960b76f38128c4",
 };
 
-  // Initialisieren
 firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
+/*
 const auth = firebase.auth();
 
 function register(email, password) {
