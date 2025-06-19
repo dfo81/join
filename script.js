@@ -1,6 +1,6 @@
 const passwordInput = document.getElementById('password');
 const toggleIcon = document.getElementById('togglePassword');
-const emailImput = document.getElementById('email');
+const emailInput = document.getElementById('email');
 const error = document.getElementById('errorMessage');
 
 let isVisible = false;
@@ -27,7 +27,7 @@ toggleIcon.addEventListener("click", function () {
   updateIcon();
 });
 
-// change icon on input
+// change password visibility icon on input
 passwordInput.addEventListener("input", function () {
   error.innerHTML = "";
   if (!passwordInput.value) {
@@ -39,14 +39,35 @@ passwordInput.addEventListener("input", function () {
 });
 
 // clear error by change on input
-emailImput.addEventListener("input", function () {
+emailInput.addEventListener("input", function () {
   error.innerHTML = "";
+});
+
+emailInput.addEventListener("focus", function () {
+  emailInput.parentElement.style.borderColor = '#4589FF';
+  passwordInput.parentElement.style.borderColor = '#D1D1D1';
+});
+
+emailInput.addEventListener("blur", function () {
+  emailInput.parentElement.style.borderColor = '#D1D1D1'; 
+});
+
+passwordInput.addEventListener("focus", function () {
+  passwordInput.parentElement.style.borderColor = '#4589FF';
+  emailInput.parentElement.style.borderColor = '#D1D1D1';
+});
+
+passwordInput.addEventListener("blur", function () {
+  passwordInput.parentElement.style.borderColor = '#D1D1D1'; 
 });
 
 // log in 
 function logIn() {
-  if (!emailImput.value || !passwordInput.value)
+  if (!emailInput.value || !passwordInput.value) {
   error.innerHTML = "Check your email and password. Please try again.";
+  emailInput.parentElement.style.borderColor = 'red';
+  passwordInput.parentElement.style.borderColor = 'red';
+  }
   else {
     //todo check login
   }

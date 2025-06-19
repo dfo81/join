@@ -195,10 +195,6 @@ main {
     transition: border-color 0.3s;
 }
 
-.input-wrapper:focus-within {
-    border-color: #4589FF;
-}
-
 .input-wrapper input {
     border: none;
     width: 100%;
